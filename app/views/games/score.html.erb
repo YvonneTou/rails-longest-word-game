@@ -1,0 +1,8 @@
+<div class='p-5'>
+  <% if @in_grid && @word_in_dict %>
+    <h2>Congratulations! <strong><%= @answer %></strong> is a valid English word!</h2>
+  <% else %>
+    <h2>Sorry! <strong><%= @answer %></strong> is not correct!</h2>
+  <% end %>
+  <p>word in dict <%= @word_in_dict %></p>
+</div>

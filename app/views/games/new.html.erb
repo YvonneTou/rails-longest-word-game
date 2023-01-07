@@ -1,0 +1,20 @@
+<div class='p-5'>
+  <h1>The Longest Word Game</h1>
+  <p>Enter the longest word you could think of using only the letters below</p>
+  <div class='my-5'><h2>
+  <% @letters.each do |letter| %>
+    <span class="badge text-bg-info"><%= letter %></span>
+  <% end %>
+  </h2></div>
+
+  <form action="/score" method="post" data-turbo="false" class="row g-3">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="col-auto">
+      <input type="text" name="word" class="form-control" placeholder="Enter your word">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success mb-3">Submit answer</button>
+    </div>
+  </form>
+</div>
